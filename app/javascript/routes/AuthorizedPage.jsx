@@ -7,9 +7,7 @@ function AuthorizedPage({ children }) {
   if (auth.isAuthenticated) {
     return (children)
   } else {
-    return (
-      <h1>Not authorised</h1>
-    )
+    auth.signinRedirect()
   }
 }
 
