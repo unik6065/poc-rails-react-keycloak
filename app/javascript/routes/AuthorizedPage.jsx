@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useAuth } from "react-oidc-context";
 
 function AuthorizedPage({ children }) {
@@ -6,7 +6,7 @@ function AuthorizedPage({ children }) {
 
   if (auth.isAuthenticated) {
     return (children)
-  } else {
+  } else if (!auth.isLoading) {
     auth.signinRedirect()
   }
 }
