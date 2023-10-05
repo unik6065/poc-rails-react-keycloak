@@ -10,13 +10,18 @@ function HomePage() {
   }, [])
 
   let button;
-  let link;
+  let links;
 
   if (auth.isAuthenticated) {
     button = (
       <button onClick={() => void auth.signoutSilent()} >logout</button>
     )
-    link = <a href="/protected">go to protected page</a>
+    links = (
+      <>
+        <a href="/protected">go to protected page</a>
+        <a href="/doctor">go to doctor page</a>
+      </>
+    )
   } else {
     button = (<button onClick={() => void auth.signinRedirect()}>login</button>)
   }
@@ -24,7 +29,7 @@ function HomePage() {
     <>
       {auth.user?.profile.preferred_username}
       <h1>Welcome on the homepage of my app</h1>
-      {link}
+      {links}
       {button}
     </>
   )
