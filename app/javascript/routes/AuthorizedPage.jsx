@@ -7,7 +7,7 @@ function AuthorizedPage({ children, role = null }) {
 
   useEffect(() => {
     setUserRoles(auth.user?.profile?.resource_access?.[auth.settings.client_id]?.roles)
-  }, [auth.user?.profile?.resource_access?.[auth.settings.client_id]?.roles])
+  }, [auth.user])
 
 
   if (auth.isAuthenticated) {
