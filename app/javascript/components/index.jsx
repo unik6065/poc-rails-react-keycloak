@@ -2,6 +2,7 @@ import React from "react";
 import { createRoot } from 'react-dom/client'
 import { AuthProvider } from "react-oidc-context";
 import App from './App'
+import axios from "axios";
 
 const oidcConfig = {
   authority: "http://localhost:8080/realms/SecondRealm",
