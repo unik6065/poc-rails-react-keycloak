@@ -5,8 +5,6 @@ Rails.application.routes.draw do
   # root "articles#index"
   root 'homepage#index'
   get '/user-infos' => 'homepage#user_info'
+  get '/doctor-infos' => 'homepage#doctor_info'
   get '/*path' => 'homepage#index'
-
-  get 'auth/:provider/callback', to: 'sessions#create'
-  get '/login', to: 'sessions#new'
 end
