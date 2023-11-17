@@ -59,6 +59,6 @@ class ApplicationController < ActionController::Base
   end
 
   def unauthorized
-    return render json: { error: 'Unauthorized' }, status: :unauthorized unless is_doctor
+    return render json: { error: 'Unauthorized' }, status: :unauthorized
   end
 end
